@@ -1,15 +1,19 @@
-public class Solution {
-    public bool hasDuplicate(int[] nums) {
-        HashSet<int> h = new HashSet<int>();
+public class Solution
+{
+    public bool HasDuplicate(int[] nums)
+    {
+        HashSet<int> seen = new HashSet<int>();
 
-        for(int i=0; i<nums.Length; i++)
+        for (int i = 0; i < nums.Length; i++)
         {
-            if(h.Contains(nums[i]))
+            if (seen.Contains(nums[i]))
             {
                 return true;
             }
-            h.Add(nums[i]);
+
+            seen.Add(nums[i]);
         }
+
         return false;
     }
 }
