@@ -1,18 +1,19 @@
-public class Solution {
-    public int[] TwoSum(int[] nums, int target) 
+public class Solution
+{
+    public int[] TwoSum(int[] nums, int target)
     {
-        Dictionary<int, int> d = new Dictionary<int, int>();
+        Dictionary<int, int> dictionary = new Dictionary<int, int>();
 
         for (int i = 0; i < nums.Length; i++)
         {
             int complement = target - nums[i];
 
-            if (d.ContainsKey(complement))
+            if (dictionary.ContainsKey(complement))
             {
-                return new int[] { d[complement], i };
+                return new int[] { dictionary[complement], i };
             }
 
-            d[nums[i]] = i;
+            dictionary[nums[i]] = i;
         }
 
         return new int[0];
